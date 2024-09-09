@@ -1,0 +1,3 @@
+.top__categories:hover span, .top__categories:hover svg{
+    color: var(--primary_color);
+}
