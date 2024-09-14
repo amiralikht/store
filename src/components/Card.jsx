@@ -1,14 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import {shortenText} from "../helpers/helper"
-import { useCart } from "../context/CartContext";
+
+
 function Card({data}) {
     const {id,title,image,price,brand} = data;
-    const [state,dispatch] = useCart();
-
-    const clickHandler = ()=>{
-        dispatch({type: "ADD_ITEM", payload: data})
-    }
   return (
     <Link to={`${id}`} >
         <div className="w-[20rem] h-[28rem] p-5 flex flex-col justify-between hover:shadow-lg duration-300 ease-in-out" style={{border: '1px solid #ececec'}}>
@@ -22,9 +18,7 @@ function Card({data}) {
                 </div>
                 
                 <p className="text-[18px] font-semibold text-gray-600">{price} $</p>
-                <div>
-                    <button onClick={clickHandler}>Shop</button>
-                </div>   
+                
             </div>
             
         </div>
